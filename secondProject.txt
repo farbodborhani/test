@@ -1,0 +1,46 @@
+a := readstat("Enter the number:");
+                            
+
+b := readstat("Enter the number=");
+                          
+
+S[ut] := readstat("enter the strength=");
+                          
+
+k[1] := a*S[ut]^b;
+                     
+
+d := readstat("Enter the diameter=");
+if 0.11 <= d and d <= 2 then
+    k[2] := 0.879/d^0.107;
+elif 2 < d and d <= 10 then
+    k[2] := 0.91/d^0.157;
+end if;
+                            
+
+                      
+
+
+k[c] := readstat("Enter from function(26-6):");
+                          
+
+
+T := readstat("enter the T:");
+                            
+
+k[d] := 0.975 + 0.432*10^(-3)*T - 0.115*10^(-5)*T^2 + 0.104*10^(-8)*T^3 - 0.595*10^(-12)*T^4;
+                     
+
+z[A] := readstat("enter the number from table (5-6):");
+                         
+
+k[e] := 1 - 0.08*z[A];
+                        
+
+S_prim_E := 0.5*S[ut];
+                        
+
+S[E] := k[1]*k[2]*k[c]*k[d]*k[e]*S_prim_E;
+                      
+
+
