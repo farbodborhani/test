@@ -1,0 +1,72 @@
+tanesh_x := readstat("enter=");
+                         
+
+tanesh_y := readstat("enter=");
+                         
+
+tanesh_z := readstat("enter=");
+                         
+
+tanesh_xy := readstat("enter=");
+                        
+
+tanesh_yz := readstat("enter=");
+                        
+
+tanesh_zx := readstat("enter=");
+                        
+
+von_mises := ([(tanesh_x - tanesh_y)^2 + (tanesh_y - tanesh_z)^2 + (tanesh_z - tanesh_x)^2 + 6*(tanesh_xy^2 + tanesh_yz^2 + tanesh_zx^2)])/sqrt(2);
+                                       
+             
+                                             
+
+`&varepsilon;_f` := readstat("enter=");
+                      
+
+if `&varepsilon;_f` < 0.05 then
+    s_y := readstat("enter=");
+else
+    s_yc := readstat("enter=");
+    s_yt := readstat("enter=");
+end if;
+                           
+
+                           
+
+if `&varepsilon;_f` < 0.05 then
+    n := s_y/von_mise;
+else
+    s_y := s_yc*s_yt/(s_yc + s_yt);
+end if;
+                                  
+                           
+                                   
+
+
+
+              
+
+
+
+tanesh_1 := readstat("enter the max of valuables=");
+                        
+
+tanesh_3 := readstat("enter the min of valuables=");
+                         
+
+if `&varepsilon;_f` < 0.05 then
+    tanesh_max := s_y/(2*n);
+else
+    n := 1/(tanesh_1/s_yt - tanesh_3/s_yc);
+end if;
+                                 
+                            
+                                 
+
+if 0.05 < `&varepsilon;_f` then
+    tanesh_max := s_y/n;
+end if;
+                      
+
+
