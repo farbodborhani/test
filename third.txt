@@ -1,0 +1,114 @@
+E := readstat("enter the module:");
+
+g := readstat("enter the gravity:");
+
+Pi = 3.14;
+d := readstat("enter the Diameter:");
+
+A := Pi*d^2/4;
+`&gamma;_specificweight` := readstat("Enter the Density:");
+
+
+l := readstat("Enter the length:");
+i_moment := readstat("Enter the moment of Area:");
+
+
+w[1] := (Pi/l)^2*sqrt(g*E*i_moment/(A*`&gamma;_specificweight`));
+
+delta[11] := readstat("Enter the number:");
+
+delta[12] := readstat("Enter the number:");
+
+delta[13] := readstat("Enter the number:");
+
+delta[14] := readstat("Enter the number:");
+
+delta[15] := readstat("Enter the number:");
+
+delta[21] := readstat("Enter the number:");
+
+delta[21] := readstat("Enter the number:");
+
+delta[22] := readstat("Enter the number:");
+
+delta[23] := readstat("Enter the number:");
+
+delta[24] := readstat("Enter the number:");
+
+delta[25] := readstat("Enter the number:");
+
+delta[31] := readstat("Enter the number:");
+
+delta[32] := readstat("Enter the number:");
+
+delta[33] := readstat("Enter the number:");
+delta[34] := readstat("Enter the number:");
+delta[35] := readstat("Enter the number:");
+delta[41] := readstat("Enter the number:");
+
+delta[42] := readstat("Enter the number:");
+delta[43] := readstat("Enter the number:");
+delta[44] := readstat("Enter the number:");
+
+delta[45] := readstat("Enter the number:");
+delta[51] := readstat("Enter the number:");
+delta[52] := readstat("Enter the number:");
+
+delta[53] := readstat("Enter the number:");
+
+delta[54] := readstat("Enter the number:");
+
+delta[55] := readstat("Enter the number:");
+
+
+
+F[1] := readstat("enter the Force:");
+F[2] := readstat("enter the Force:");
+F[3] := readstat("enter the Force:");
+F[4] := readstat("enter the Force:");
+F[5] := readstat("enter the Force:");
+
+
+y[1]:=;
+
+F[1]*delta[11] + F[2]*delta[12] + F[3]*delta[13] + F[4]*delta[14] + F[5]*delta[15];
+y[2]:=;
+
+F[1]*delta[21] + F[2]*delta[22] + F[3]*delta[23] + F[4]*delta[24] + F[5]*delta[25];
+y[3]:=;
+
+F[1]*delta[31] + F[2]*delta[32] + F[3]*delta[33] + F[4]*delta[34] + F[5]*delta[35];
+y[4]:=;
+
+F[1]*delta[41] + F[2]*delta[42] + F[3]*delta[43] + F[4]*delta[44] + F[5]*delta[45];
+y[5]:=;
+
+F[1]*delta[51] + F[2]*delta[52] + F[3]*delta[53] + F[4]*delta[54] + F[5]*delta[55];
+
+
+
+
+`&sum;`(F[i]*y[i]) := F[1]*y[1] + F[2]*y[2] + F[3]*y[3] + F[4]*y[4] + F[5]*y[5];
+`&sum;`(F[i]*y[i]^2) := F[1]*y[1]^2 + F[2]*y[2]^2 + F[3]*y[3]^2 + F[4]*y[4]^2 + F[5]*y[5]^2;
+g := readstat("Enter the gravity:");
+omega[1] := sqrt(g*`&sum;`(F[i]*y[i])/`&sum;`(F[i]*y[i]^2));
+
+
+
+
+w[11] := sqrt(g/(F[1]*delta[11]));
+
+w[22] := sqrt(g/(F[2]*delta[22]));
+
+w[33] := sqrt(g/(F[3]*delta[33]));
+
+w[44] := sqrt(g/(F[4]*delta[44]));
+
+w[55] := sqrt(g/(F[5]*delta[55]));
+
+
+
+`&sum;`(1/w[ii]^2) := 1/w[11]^2 + 1/w[22]^2 + 1/w[33]^2 + 1/w[44]^2 + 1/w[55]^2;
+
+w[1] := sqrt(1/`&sum;`(1/w[ii]^2));
+
